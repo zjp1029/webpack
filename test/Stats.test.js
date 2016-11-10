@@ -15,6 +15,7 @@ var tests = fs.readdirSync(base).filter(function(testName) {
 var Stats = require("../lib/Stats");
 
 describe("Stats", function() {
+	this.timeout(10000);
 	tests.forEach(function(testName) {
 		it("should print correct stats for " + testName, function(done) {
 			var options = {

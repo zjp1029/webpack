@@ -156,7 +156,7 @@ describe("Compiler", function() {
 			bundle.should.not.containEql("fixtures");
 			chunk.should.not.containEql("fixtures");
 			bundle.should.containEql("webpackJsonp");
-			chunk.should.containEql("webpackJsonp(");
+			chunk.should.containEql("window[\"webpackJsonp\"] || []).push");
 			done();
 		});
 	});
