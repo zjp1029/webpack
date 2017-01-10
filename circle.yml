@@ -1,10 +1,13 @@
 general:
-  artifacts:
-    - "./coverage"
+  branches:
+    only:
+      - master
 
 machine:
+  environment:
+    NO_WATCH_TESTS: 1
   node:
-    version: 4.7.0
+    version: 7
 
 dependencies:
   pre:
@@ -15,13 +18,9 @@ dependencies:
     - yarn link || true && yarn link webpack
 
 test:
-  pre:
-    - npm run travis:lint
   override:
+    - npm run travis:lint
     - npm run travis:test:
         parallel: true
         files:
-          - test/ConfigTestCases.test.js
-          - test/TestCases.test.js
-          - test/Stats.test.js
-          - test/**/*.test.js
+          - test/*.test.js
