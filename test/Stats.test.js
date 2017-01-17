@@ -155,22 +155,7 @@ describe("Stats", function() {
 	describe("Presets", function() {
 		describe("presetToOptions", function() {
 			it("returns correct object with 'Normal'", function() {
-				Stats.presetToOptions("Normal").should.eql({
-					assets: false,
-					version: false,
-					timings: true,
-					hash: true,
-					entrypoints: false,
-					chunks: true,
-					chunkModules: false,
-					errorDetails: true,
-					reasons: false,
-					depth: false,
-					usedExports: false,
-					providedExports: false,
-					colors: true,
-					performance: true
-				});
+				Stats.presetToOptions("Normal").should.eql({});
 			});
 			it("truthy values behave as 'normal'", function() {
 				var normalOpts = Stats.presetToOptions('normal');
@@ -183,25 +168,7 @@ describe("Stats", function() {
 			});
 			it("returns correct object with 'none'", function() {
 				Stats.presetToOptions("none").should.eql({
-					hash: false,
-					version: false,
-					timings: false,
-					assets: false,
-					entrypoints: false,
-					chunks: false,
-					chunkModules: false,
-					modules: false,
-					reasons: false,
-					depth: false,
-					usedExports: false,
-					providedExports: false,
-					children: false,
-					source: false,
-					errors: false,
-					errorDetails: false,
-					warnings: false,
-					publicPath: false,
-					performance: false
+					all: false
 				});
 			});
 			it("falsy values behave as 'none'", function() {

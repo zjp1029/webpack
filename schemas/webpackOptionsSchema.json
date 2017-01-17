@@ -847,6 +847,7 @@
             "errors-only",
             "minimal",
             "normal",
+            "detailed",
             "verbose"
           ]
         }
